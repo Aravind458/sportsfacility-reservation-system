@@ -12,10 +12,10 @@ const AdminDashboard = () => {
         if (role !== 'admin') return;
         const loadData = async () => {
             try {
-                const bookingResponse = await fetch('http://localhost:5000/api/bookings/all', {
+                const bookingResponse = await fetch('https://sports-facility-reservation-system.onrender.com/api/bookings/all', {
                     headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
                 });
-                const statsResponse = await fetch('http://localhost:5000/api/bookings/stats', {
+                const statsResponse = await fetch('https://sports-facility-reservation-system.onrender.com/api/bookings/stats', {
                     headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
                 });
                 if (!bookingResponse.ok) throw new Error('Failed to fetch bookings');

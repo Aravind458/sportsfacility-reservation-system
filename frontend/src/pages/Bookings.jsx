@@ -10,7 +10,7 @@ const Bookings = () => {
         const loadBookings = async () => {
             try {
                 const endpoint = role === 'admin' ? '/api/bookings/all' : '/api/bookings/my-bookings';
-                const response = await fetch(`http://localhost:5000${endpoint}`, {
+                const response = await fetch(`https://sports-facility-reservation-system.onrender.com${endpoint}`, {
                     headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
                 });
                 if (!response.ok) {

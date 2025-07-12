@@ -12,7 +12,7 @@ const Facilities = () => {
     useEffect(() => {
         const loadFacilities = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/facilities', {
+                const response = await fetch('https://sports-facility-reservation-system.onrender.com/api/facilities', {
                     headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
                 });
                 if (!response.ok) throw new Error('Failed to fetch facilities');
