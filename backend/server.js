@@ -9,9 +9,13 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // your frontend during dev
+  origin: [
+    'http://localhost:5173', // Local development
+    'https://sportsfacility-reservation-system.vercel.app' // Vercel frontend
+  ],
   credentials: true
 }));
+
 
 app.use(express.json());
 
